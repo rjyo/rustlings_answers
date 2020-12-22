@@ -6,12 +6,21 @@
 // This test has a problem with it -- make the test compile! Make the test
 // pass! Make the test fail! Execute `rustlings hint tests1` for hints :)
 
-// I AM NOT DONE
-
 #[cfg(test)]
 mod tests {
     #[test]
+    #[should_panic]
     fn you_can_assert() {
-        assert!();
+        assert!(true, "this must be true");
+        panic!("hahaha")
+    }
+
+    #[test]
+    fn it_works() -> Result<(), String> {
+        if 2 + 2 == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus two does not equal four"))
+        }
     }
 }
